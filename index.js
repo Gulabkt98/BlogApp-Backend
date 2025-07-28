@@ -5,7 +5,7 @@ const app = express();
 //import dotenv config //find port number
 
 require("dotenv").config();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 //middleware
 app.use(express.json());
@@ -20,10 +20,11 @@ const blog = require("./routes/blog");
  connectwithdb();
 
  //activate server
- app.listen(()=>{
+ app.listen(PORT,()=>{
     console.log(`App started at  port no  ${PORT}`);
  })
 // default route
 app.get("/",(req,res)=>{
     res.send(`<h1>This is Homepage Baby</h1>`);
 })
+
